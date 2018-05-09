@@ -1,0 +1,7 @@
+[package]
+name = "streaming-anonymise"
+version = "0.1.0"
+authors = ["Phantomical <phantomical@github.com>"]
+
+[dependencies]
+statslib = { git = "https://github.com/steamroller-airmash/statsbot-log-tools-rs" }
