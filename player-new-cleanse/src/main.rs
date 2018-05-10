@@ -6,19 +6,14 @@ use statslib::*;
 use std::io::{BufReader, BufRead, stdin};
 use std::collections::HashMap;
 use std::mem;
-use std::fs::File;
-use std::env::args;
 
 fn main() {
-	let args: Vec<String> = args().collect();
-	let file = File::open(args[1].clone()).unwrap();
-
     let mut players: HashMap<i64, ()> = HashMap::new();
     let mut is_login = false;
     let mut newplayers: HashMap<i64, ()> = HashMap::new();
     let mut msgbuffer: Vec<String> = vec![];
 
-	for line in BufReader::new(file).lines() {
+	for line in BufReader::new(stdin()).lines() {
 		let ln = line.unwrap();
 		let result = parse(&ln);
 
